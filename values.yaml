@@ -1,0 +1,77 @@
+##walmart
+onPremToken: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJyYXktdGVzdCIsImV4cCI6MTgwMTA4MDI3NiwiaWF0IjoxNzg1NTI4Mjc2LCJpc3MiOiJodHRwczovL29kaWdvcy5pbyIsInByb2ZpbGVzIjpbImphdmEtZWJwZi1pbnN0cnVtZW50YXRpb25zIl0sInN1YiI6Imh0dHBzOi8vb2RpZ29zLmlvL29ucHJlbSJ9.ITxBILC_1zapm9mkEg4UnwpEakCmSeweQysuscOPdd_pVOrKgyz7Yb71rlsr5kbVtef2TXv9-Fk84zhI-iSzCGW_xoNvxXFRaZlSA0l1N_dkWdk7_dGAL-e83ResEP_uaytat5eomAycwi0rWBc2gD60v59arwAXKLCQQsojpSDOQk9MqLqUs38pQA2cfkHURYQe_YdwNCF6s1ivCUN23jLE7VPK-xqmHWwEvfdum4A9EecvCyPL3iArDZzRX6wSu21RDTEbRahliQ8FcZwoVcnVBrf6xFuXwTIaMftb8w6qHMAZOnKEEwJgHOT1dks_FPVUDUY_oHqOk5z5cVzRtw"
+
+# imagePullSecrets: ["odigos-enterprise-registry"]
+
+##HPE
+# onPremToken: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJyYXktdGVzdCIsImV4cCI6MTc4NTg2NzQzMywiaWF0IjoxNzg1MjYyNjMzLCJpc3MiOiJodHRwczovL29kaWdvcy5pbyIsInByb2ZpbGVzIjpudWxsLCJzdWIiOiJodHRwczovL29kaWdvcy5pby9vbnByZW0ifQ.nk3D4oq5H_CCN9YGruKVTFyvD8AqA4Upt2GlnMNzhdbugr40lb-y26e4UjO30voYntv8kTTtHSWAUk7x3yqDA5mcILqo8Pyb8FcLRVz-UP7i9IW7DQWZbJL_juuDsFnq_1WYdg6_4DQ1KmfAY5FgH4TykqtaCRd_F8XP_sUAaWjbP84aUKue1QlA2v5mq35r0em9i0S3dnu5Uc8bDDlSoY5QuOQeCta_EQWsyAAJfwXxcwS1SqlLgsgb2m1IkT3LH0LlDfbBu88BoKw2RzhJJvVzbjJSM075F_OnFbISCV7zdL7-P8s8tuwPbOQICixrFSrgYtlL-H6ZtP3TXSPYNg"
+
+instrumentor:
+ mountMethod: k8s-init-container
+
+odiglet:
+  # extended: true
+  # odiglet:
+  #   privileged: true
+  traceIdSuffix: '6A'
+
+# profiling:
+  # @schema
+  # description: When true, enables profiling pipelines on the node collector and cluster gateway.
+  # @schema
+  # enabled: true
+
+# collectorNode:
+#   requestMemoryMiB: 250
+#   limitMemoryMiB: 400
+#   requestCPUm: 250
+#   limitCPUm: 450
+
+
+
+# wasp:
+#   disabled: true
+
+clusterName: LocalCluster
+centralProxy:
+ centralBackendURL: central-backend.odigos-central.svc.cluster.local:8081
+
+# rollout:
+#   automaticRolloutDisabled: true
+  # maxConcurrentRollouts: 1
+
+  
+
+# ResourceSizePreset: size_m
+
+# odiglet:
+#   extended: true
+
+# signals:
+#   - traces
+#   - metrics
+
+# metricsSources:
+  # hostMetrics:
+#     disabled: false
+  # networkMetrics:
+  #   enabled: true
+#   kubeletStats:
+#     disabled: false
+#   spanMetrics:
+#     disabled: false
+#   agentMetrics:
+#     runtimeMetrics:
+#       java:
+#         disabled: false
+
+# collectorGateway:
+#   clusterMetricsEnabled: true
+
+# ignoredNamespaces:
+  # - odigos-system
+  # - kube-system
+  # - local-path-storage
+  # - istio-system
+  # - linkerd
+  # - kube-node-lease
