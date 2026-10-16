@@ -10,7 +10,7 @@ spec:
   sources:
     - repoURL: https://odigos-io.github.io/odigos
       chart: odigos
-      targetRevision: v1.36.0 # REQUIRED: set the version from 'helm search repo odigos --versions'
+      targetRevision: v1.36.2 # REQUIRED: set the version from 'helm search repo odigos --versions'
       helm:
         releaseName: odigos
         valueFiles: 
@@ -21,9 +21,15 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: odigos-system
+  ignoreDifferences:
+    - kind: ConfigMap
+      name: odigos-deployment
+      jsonPointers:
+        - /data/odigos-deployment-id
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      - RespectIgnoreDifferences=true
