@@ -15,10 +15,10 @@ spec:
           - values.yaml
     - repoURL: https://github.com/rayray221/argo-odigos
       targetRevision: HEAD
+      path: .
   destination:
     server: https://kubernetes.default.svc
     namespace: odigos-system
-    path: .
   syncPolicy:
     automated:
       prune: true
