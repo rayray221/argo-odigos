@@ -6,7 +6,6 @@ metadata:
 spec:
   project: default
   sources:
-    # Source 1: The Helm chart from the registry
     - repoURL: https://odigos-io.github.io/odigos
       chart: odigos
       targetRevision: v1.36.0 # REQUIRED: set the version from 'helm search repo odigos --versions'

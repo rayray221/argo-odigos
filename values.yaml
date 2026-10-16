@@ -14,6 +14,15 @@ odiglet:
   # odiglet:
   #   privileged: true
   traceIdSuffix: '6A'
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: NotIn
+                values:
+                  - "kind-control-plane"
 
 # profiling:
   # @schema
@@ -43,9 +52,6 @@ centralProxy:
   
 
 # ResourceSizePreset: size_m
-
-# odiglet:
-#   extended: true
 
 # signals:
 #   - traces
