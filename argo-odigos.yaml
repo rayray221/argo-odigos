@@ -12,7 +12,7 @@ spec:
       helm:
         releaseName: odigos
         valueFiles: 
-          - $values/values.yaml
+          - $values/values/values.yaml
     - repoURL: https://github.com/rayray221/argo-odigos
       targetRevision: HEAD
       ref: values
