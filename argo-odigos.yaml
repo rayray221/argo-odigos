@@ -2,20 +2,24 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: odigos-deployment
-  namespace: argocd  # <- Replace with your Argo CD namespace
+  namespace: argocd
 spec:
   project: default
-  source:
-    repoURL: https://odigos-io.github.io/odigos
-    chart: odigos
-    targetRevision: v1.36.0 # REQUIRED: set the version from 'helm search repo odigos --versions'
-    helm:
-      releaseName: odigos
-      valueFiles: 
-        - values.yaml
+  sources:
+    # Source 1: The Helm chart from the registry
+    - repoURL: https://odigos-io.github.io/odigos
+      chart: odigos
+      targetRevision: v1.36.0 # REQUIRED: set the version from 'helm search repo odigos --versions'
+      helm:
+        releaseName: odigos
+        valueFiles: 
+          - values.yaml
+    - repoURL: https://github.com/rayray221/argo-odigos
+      targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
-    namespace: odigos-system  # <- Replace with the desired namespace where you want Odigos to be installed
+    namespace: odigos-system
+    path: .
   syncPolicy:
     automated:
       prune: true
