@@ -12,10 +12,10 @@ spec:
       helm:
         releaseName: odigos
         valueFiles: 
-          - values.yaml
+          - $values/values.yaml
     - repoURL: https://github.com/rayray221/argo-odigos
       targetRevision: HEAD
-      path: .
+      ref: values
   destination:
     server: https://kubernetes.default.svc
     namespace: odigos-system
