@@ -36,7 +36,9 @@ odiglet:
 #   requestCPUm: 250
 #   limitCPUm: 450
 
-
+sampling:
+  k8sHealthProbesSampling:
+    enabled: true
 
 # wasp:
 #   disabled: true
