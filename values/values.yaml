@@ -86,7 +86,7 @@ centralProxy:
 
 userInstrumentationEnvs:
   languages:
-    javascript:
+    nodejs:
       enabled: true
       env:
         ODIGOS_DISABLED_INSTRUMENTATION_LIBRARIES: "@opentelemetry/instrumentation-router"
