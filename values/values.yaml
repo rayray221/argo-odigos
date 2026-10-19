@@ -83,3 +83,10 @@ centralProxy:
   # - istio-system
   # - linkerd
   # - kube-node-lease
+
+userInstrumentationEnvs:
+  languages:
+    nodejs:
+      enabled: true
+      env:
+        ODIGOS_DISABLED_INSTRUMENTATION_LIBRARIES: "@opentelemetry/instrumentation-router"
