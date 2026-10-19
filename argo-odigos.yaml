@@ -4,13 +4,13 @@ metadata:
   name: odigos-deployment
   namespace: argocd
   finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  - resources-finalizer.argocd.argoproj.io/foreground
 spec:
   project: default
   sources:
     - repoURL: https://odigos-io.github.io/odigos
       chart: odigos
-      targetRevision: v1.36.2 # REQUIRED: set the version from 'helm search repo odigos --versions'
+      targetRevision: v1.36.3 # REQUIRED: set the version from 'helm search repo odigos --versions'
       helm:
         releaseName: odigos
         valueFiles: 

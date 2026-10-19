@@ -39,6 +39,7 @@ odiglet:
 sampling:
   k8sHealthProbesSampling:
     enabled: true
+    keepPercentage: 0
 
 # wasp:
 #   disabled: true
@@ -86,7 +87,7 @@ centralProxy:
 
 userInstrumentationEnvs:
   languages:
-    nodejs:
+    javascript:
       enabled: true
       env:
         ODIGOS_DISABLED_INSTRUMENTATION_LIBRARIES: "@opentelemetry/instrumentation-router"
