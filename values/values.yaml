@@ -85,9 +85,9 @@ centralProxy:
   # - linkerd
   # - kube-node-lease
 
-userInstrumentationEnvs:
-  languages:
-    javascript:
-      enabled: true
-      env:
-        ODIGOS_DISABLED_INSTRUMENTATION_LIBRARIES: "@opentelemetry/instrumentation-router"
+# userInstrumentationEnvs:
+#   languages:
+#     javascript:
+#       enabled: true
+#       env:
+#         ODIGOS_DISABLED_INSTRUMENTATION_LIBRARIES: "@opentelemetry/instrumentation-router"
