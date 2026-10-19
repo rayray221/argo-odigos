@@ -39,7 +39,7 @@ odiglet:
 sampling:
   k8sHealthProbesSampling:
     enabled: true
-    keepPercentage: 0
+    keepPercentage: 1
 
 # wasp:
 #   disabled: true
